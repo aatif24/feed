@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "../features/counter/counterSlice";
-import feedsReducer from "../features/feeds/feedsSlice";
+import feedsReducer from "../features/feeds/feedSlice";
 
 export default configureStore({
     reducer: {
-        feeds: feedsReducer,
+        feed: feedsReducer,
         counter: counterReducer,
     },
 });

@@ -1,10 +1,14 @@
 import React from "react";
-import "../css/index.css";
+import "../css/loader.css";
 const App = () => {
     return (
-        <div className="vertical-center">
-            <h1>Loading</h1>
-        </div>
+        <>
+            <div className="spinner text-center d-flex justify-content-center">
+                <div className="spinner-border text-secondary " role="status">
+                    <span className="sr-only">Loading...</span>
+                </div>
+            </div>
+        </>
     );
 };
 

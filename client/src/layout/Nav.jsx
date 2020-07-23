@@ -5,6 +5,13 @@ const App = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white ">
             <div className="container-fluid px-0">
+                <a
+                    className="navbar-brand text-muted font-weight-bold active"
+                    href="/"
+                    aria-current="page"
+                >
+                    <i className="fas fa-font fa-2x"></i>
+                </a>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -17,9 +24,6 @@ const App = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse " id="navbarTogglerDemo01">
-                    <a className="navbar-brand" href="#">
-                        <i className="fas fa-virus-slash fa-2x"></i>
-                    </a>
                     <ul className="navbar-nav mr-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <NavLink className="nav-link active" aria-current="page" to="/">
