@@ -1,26 +1,26 @@
 const mysql = require("mysql");
 
 var dbConnectionInfo = {
-    host: "localhost",
+    host: process.env.DB_HOST,
     user: "root",
-    password: "C0ld1*5!",
-    database: "feeds"
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
 };
 
 var dbConnection = mysql.createConnection(dbConnectionInfo);
 
 dbConnection.on(
     "connect",
-    function() {
+    function () {
         console.log("@connected to db");
     },
     "end",
-    function(err) {
+    function (err) {
         console.log("@end ", err);
         throw err;
     },
     "close",
-    function(err) {
+    function (err) {
         console.log("@closed ", err);
         throw err;
     }
