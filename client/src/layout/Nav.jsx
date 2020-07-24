@@ -1,6 +1,7 @@
 import React from "react";
 
 import { NavLink } from "react-router-dom";
+import "../css/index.css";
 const App = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-white ">
@@ -10,7 +11,7 @@ const App = () => {
                     href="/"
                     aria-current="page"
                 >
-                    <i className="fas fa-font fa-2x"></i>
+                    <i className="fas fa-font feed fa-3x"></i>
                 </a>
                 <button
                     className="navbar-toggler"
@@ -24,7 +25,7 @@ const App = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse " id="navbarTogglerDemo01">
-                    <ul className="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <ul className="navbar-nav w-100 mb-2 mb-lg-0 d-flex justify-content-end">
                         <li className="nav-item">
                             <NavLink className="nav-link active" aria-current="page" to="/">
                                 Home

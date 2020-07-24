@@ -1,0 +1,38 @@
+.feed-card-parent:hover .feed-img {
+    transition: all 0.2s ease;
+    transform: scale(1.01);
+}
+
+.feed-img {
+    box-shadow: 0 0.5rem 1rem black !important;
+    border-radius: 1rem;
+}
+
+@media (max-width: 575.98px) {
+    .w-xs-100 {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .w-sm-100 {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .w-md-100 {
+        width: 100% !important;
+    }
+}
+
+.card {
+    box-shadow: 0 0.5rem 0.8rem #6c757d !important;
+}
+.search-input-group {
+    transition: all 0.2s ease;
+}
+
+.search-input-group:focus-within {
+    width: 100% !important;
+}

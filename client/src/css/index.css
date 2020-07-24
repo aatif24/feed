@@ -1,12 +1,19 @@
 html {
     scroll-behavior: smooth;
 }
-.table td,
-th {
-    vertical-align: middle !important;
-    /* text-align: center; */
-}
 
+i.feed {
+    font-family: monospace !important;
+}
+i.feed::before {
+    content: "FEED";
+}
+.nav-link.active {
+    border-bottom: 0.2rem solid #6c757d;
+}
+.nav-link {
+    line-height: 1;
+}
 .vertical-center {
     min-height: 100%; /* Fallback for browsers do NOT support vh unit */
     min-height: 100vh; /* These two lines are counted as one :-)       */
