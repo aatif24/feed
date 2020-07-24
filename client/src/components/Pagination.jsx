@@ -15,7 +15,7 @@ const App = () => {
             <Pagination
                 innerClass="pagination justify-content-end"
                 itemClass="page-item border-0"
-                linkClass="page-link border-0"
+                linkClass="page-link border-0 mx-2"
                 activePage={page}
                 activeClass="active"
                 itemsCountPerPage={12}

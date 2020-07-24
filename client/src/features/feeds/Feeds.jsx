@@ -20,9 +20,9 @@ const App = () => {
     }, []);
     useEffect(() => {
         // if (feeds.length) {
-            setTimeout(() => {
-                document.getElementById("root").scrollIntoView();
-            }, 500);
+        setTimeout(() => {
+            document.getElementById("root").scrollIntoView();
+        }, 500);
         // }
     }, [page]);
 
@@ -41,7 +41,7 @@ const App = () => {
                                 aria-describedby="search"
                                 onChange={(e) => dispatch(search(e.target.value, order))}
                             />
-                            <span className="input-group-text bg-white" id="search">
+                            <span className="input-group-text bg-blue" id="search">
                                 <i className="fas fa-search fa-lg"></i>
                             </span>
                         </div>
@@ -57,22 +57,20 @@ const App = () => {
                                 <option value="title">Title</option>
                                 <option value="updated_on">Date Modified</option>
                             </select>
-                            <label className="input-group-text bg-white py-0" htmlFor="sort">
-                                <button
-                                    className="btn btn-sm py-0"
-                                    onClick={(e) =>
-                                        dispatch(
-                                            sort(order, sortOrder === "asc" ? "desc" : "asc", s)
-                                        )
-                                    }
-                                >
-                                    {sortOrder === "asc" ? (
-                                        <i className="fas fa-arrow-up"></i>
-                                    ) : (
-                                        <i className="fas fa-arrow-down"></i>
-                                    )}
-                                </button>
-                            </label>
+
+                            <button
+                                className="input-group-text btn btn-sm py-0 px-2 bg-blue"
+                                htmlFor="sort"
+                                onClick={(e) =>
+                                    dispatch(sort(order, sortOrder === "asc" ? "desc" : "asc", s))
+                                }
+                            >
+                                {sortOrder === "asc" ? (
+                                    <i className="fas fa-arrow-up"></i>
+                                ) : (
+                                    <i className="fas fa-arrow-down"></i>
+                                )}
+                            </button>
                         </div>
                     </div>
                 </div>

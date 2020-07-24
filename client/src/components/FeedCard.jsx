@@ -7,7 +7,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 const App = ({ data }) => {
     return (
-        <div className="col-lg-4 col-md-6 col-sm-12 mb-3 d-flex rounded feed-card-parent">
+        <div className="col-lg-4 col-md-6 col-sm-12 mb-4 d-flex  feed-card-parent">
             <div className="card shadow border-0">
                 <div className="card-body">
                     <div className="d-flex align-items-center justify-content-center p-1 mb-3">
@@ -20,7 +20,7 @@ const App = ({ data }) => {
                     </div>
 
                     <div className="mt-4">
-                        <p className="h5 ">{data.title}</p>
+                        <p className="h5 font-weight-bold">{data.title}</p>
                         <p className="mb-5 mt-3 font-weight-light">{data.description}</p>
                         <small
                             className="text-right position-absolute text-muted font-italic"

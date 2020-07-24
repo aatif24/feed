@@ -3,3 +3,30 @@
 
     padding: 0.5rem 1rem;
 }
+
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #072283;
+    border-color: #072283;
+}
+.page-item .page-link {
+    z-index: 3;
+    color: #072283;
+}
+
+.page-link{
+    background-color:#fafbff ;
+    padding: 0.5rem 1rem;
+
+}
+.page-link:hover{
+    background-color:#a9d1f9 ;
+    border-radius: 5rem;
+    padding: 0.5rem 1rem;
+
+}
+.page-item.disabled .page-link{
+    background-color:#fafbff ;
+}

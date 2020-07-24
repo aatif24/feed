@@ -11,7 +11,7 @@ const App = () => {
                     href="/"
                     aria-current="page"
                 >
-                    <i class="fas fa-font feed  "></i>
+                    <i className="fas fa-font feed  "></i>
                 </a>
                 <button
                     className="navbar-toggler"
@@ -25,15 +25,15 @@ const App = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse " id="navbarTogglerDemo01">
-                    <ul className="navbar-nav w-100 mb-2 mb-lg-0 d-flex justify-content-end">
-                        <li className="nav-item">
-                            <NavLink className="nav-link active" aria-current="page" to="/">
+                    <ul className="navbar-nav w-100 mb-2  mb-lg-0 d-flex justify-content-end px-0">
+                        <li className="nav-item  mr-3 px-0">
+                            <NavLink className="nav-link active px-0"  to="/">
                                 Home
                             </NavLink>
                         </li>
-                        <li className="nav-item">
+                        <li className="nav-item px-0">
                             <a
-                                className="nav-link"
+                                className="nav-link px-0"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href="https://about.me/aatifshaikh"
