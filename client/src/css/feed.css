@@ -1,7 +1,7 @@
-.feed-card-parent:hover .feed-img {
+/* .feed-card-parent:hover .feed-img {
     transition: all 0.2s ease;
     transform: scale(1.01);
-}
+} */
 
 .feed-img {
     box-shadow: 0 0.5rem 1rem black !important;

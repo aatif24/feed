@@ -8,11 +8,7 @@ import { paginate } from "../features/feeds/feedSlice";
 const App = () => {
     const dispatch = useDispatch();
 
-    let { feeds, loading, s, limit, page, order, pageCount } = useSelector((state) => state.feed);
-
-    let test = () => {
-        return true;
-    };
+    let { s, page, order, pageCount } = useSelector((state) => state.feed);
 
     return (
         <div>

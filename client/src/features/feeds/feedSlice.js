@@ -10,6 +10,8 @@ export const feedSlice = createSlice({
         limit: 10,
         loading: false,
         pageCount: 0,
+        order: "title",
+        sortOrder: "asc",
     },
     reducers: {
         list: (state, action) => {
@@ -33,15 +35,18 @@ export const feedSlice = createSlice({
         order: (state, action) => {
             state.order = action.payload;
         },
+        sortOrder: (state, action) => {
+            state.sortOrder = action.payload;
+        },
     },
 });
 
-export const { list, page, limit, loading, s, order, pageCount } = feedSlice.actions;
+export const { list, page, limit, loading, s, order, pageCount, sortOrder } = feedSlice.actions;
 
 export const search = (str, orderBy) => (dispatch) => {
     dispatch(loading(true));
     axios
-        .get("http://localhost:3000", {
+        .get("http://localhost:4000", {
             params: { s: str, order: orderBy },
         })
         .then((response) => {
@@ -59,11 +64,10 @@ export const search = (str, orderBy) => (dispatch) => {
 };
 
 export const paginate = (pageNum, s, sortBy) => (dispatch) => {
-    console.log(pageNum);
     dispatch(loading(true));
-    let sortOrder = sortBy == "title" ? "asc" : "desc";
+    let sortOrder = sortBy === "title" ? "asc" : "desc";
     axios
-        .get("http://localhost:3000", {
+        .get("http://localhost:4000", {
             params: { s: s, order: sortBy, sortOder: sortOrder, page: pageNum },
         })
         .then((response) => {
@@ -78,17 +82,18 @@ export const paginate = (pageNum, s, sortBy) => (dispatch) => {
         });
 };
 
-export const sort = (sortBy, s, pageNum) => (dispatch) => {
+export const sort = (sortBy, orderDirection = "asc", s) => (dispatch) => {
     dispatch(loading(true));
-    let sortOrder = sortBy == "title" ? "asc" : "desc";
+
     axios
-        .get("http://localhost:3000", {
-            params: { s: s, order: sortBy, sortOder: sortOrder },
+        .get("http://localhost:4000", {
+            params: { s: s, order: sortBy, sortOder: orderDirection },
         })
         .then((response) => {
             let data = response.data.data.data;
             let count = response.data.data.count;
             dispatch(order(sortBy));
+            dispatch(sortOrder(orderDirection));
             dispatch(list(data));
             dispatch(page(1));
             dispatch(pageCount(count));

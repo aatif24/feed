@@ -11,7 +11,7 @@ const App = () => {
                     href="/"
                     aria-current="page"
                 >
-                    <i className="fas fa-font feed fa-3x"></i>
+                    <i class="fas fa-font feed  "></i>
                 </a>
                 <button
                     className="navbar-toggler"
@@ -35,6 +35,7 @@ const App = () => {
                             <a
                                 className="nav-link"
                                 target="_blank"
+                                rel="noopener noreferrer"
                                 href="https://about.me/aatifshaikh"
                             >
                                 About

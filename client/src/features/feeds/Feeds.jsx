@@ -5,18 +5,26 @@ import Feed from "../../components/FeedCard";
 import Pagination from "../../components/Pagination";
 
 import { useSelector, useDispatch } from "react-redux";
-import { search, paginate, sort } from "./feedSlice.js";
+import { search, sort } from "./feedSlice.js";
 
 import "../../css/feed.css";
 
 const App = () => {
     const dispatch = useDispatch();
 
-    let { feeds, loading, s, limit, page, order } = useSelector((state) => state.feed);
+    let { feeds, loading, s, order, sortOrder, page } = useSelector((state) => state.feed);
 
     useEffect(() => {
         dispatch(search());
+        // eslint-disable-next-line
     }, []);
+    useEffect(() => {
+        // if (feeds.length) {
+            setTimeout(() => {
+                document.getElementById("root").scrollIntoView();
+            }, 500);
+        // }
+    }, [page]);
 
     return (
         <>
@@ -44,18 +52,31 @@ const App = () => {
                             <select
                                 className="form-select"
                                 id="sort"
-                                onChange={(e) => dispatch(sort(e.target.value, s))}
+                                onChange={(e) => dispatch(sort(e.target.value, sortOrder, s))}
                             >
                                 <option value="title">Title</option>
                                 <option value="updated_on">Date Modified</option>
                             </select>
-                            <label className="input-group-text bg-white" htmlFor="sort">
-                                Sort By
+                            <label className="input-group-text bg-white py-0" htmlFor="sort">
+                                <button
+                                    className="btn btn-sm py-0"
+                                    onClick={(e) =>
+                                        dispatch(
+                                            sort(order, sortOrder === "asc" ? "desc" : "asc", s)
+                                        )
+                                    }
+                                >
+                                    {sortOrder === "asc" ? (
+                                        <i className="fas fa-arrow-up"></i>
+                                    ) : (
+                                        <i className="fas fa-arrow-down"></i>
+                                    )}
+                                </button>
                             </label>
                         </div>
                     </div>
                 </div>
-                
+
                 <div className="row my-3">
                     {feeds && feeds.length
                         ? feeds.map((v, i) => {

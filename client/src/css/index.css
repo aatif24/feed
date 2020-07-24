@@ -3,10 +3,12 @@ html {
 }
 
 i.feed {
-    font-family: monospace !important;
+    font-family: "Play", sans-serif !important;
+    font-size: 2rem;
 }
+
 i.feed::before {
-    content: "FEED";
+    content: " FEED";
 }
 .nav-link.active {
     border-bottom: 0.2rem solid #6c757d;
