@@ -66,20 +66,20 @@ const App = ({ data }) => {
                                               <LazyLoadImage
                                                   alt={v.title}
                                                   effect="blur"
-                                                  className=" feed-img w-75"
+                                                  className=" my-4 feed-img w-75"
                                                   src={v.image}
                                               />
                                           </td>
                                           <td width="25%">
-                                              <p className="h6 font-weight-bold">{v.title}</p>
+                                              <p className="h6 font-weight-bold p-0 m-0">{v.title}</p>
                                           </td>
                                           <td>
-                                              <p className="mb-5 mt-3 font-weight-light">
+                                              <p className="p-0 m-0">
                                                   {v.description}
                                               </p>
                                           </td>
                                           <td width="25%">
-                                              <p className="mb-5 mt-3 font-weight-light">
+                                              <p className="p-0 m-0">
                                                   {moment(v.updated_on).format("LLLL")}
                                               </p>
                                           </td>
