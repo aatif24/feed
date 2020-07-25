@@ -30,9 +30,9 @@ const App = ({ data }) => {
                                     Title{" "}
                                     {order == "title" &&
                                         (sortOrder === "asc" ? (
-                                            <i className="fas fa-arrow-up"></i>
+                                            <i className="fas fa-sort-up"></i>
                                         ) : (
-                                            <i className="fas fa-arrow-down"></i>
+                                            <i className="fas fa-sort-down"></i>
                                         ))}
                                 </th>
                                 <th className="text-left">Description</th>
@@ -51,9 +51,9 @@ const App = ({ data }) => {
                                     Date Updated{" "}
                                     {order == "updated_on" &&
                                         (sortOrder === "asc" ? (
-                                            <i className="fas fa-arrow-up"></i>
+                                            <i className="fas fa-sort-up"></i>
                                         ) : (
-                                            <i className="fas fa-arrow-down"></i>
+                                            <i className="fas fa-sort-down"></i>
                                         ))}
                                 </th>
                             </tr>

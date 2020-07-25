@@ -55,6 +55,7 @@ const App = () => {
                             <select
                                 className="form-select"
                                 id="sort"
+                                value={order}
                                 onChange={(e) => dispatch(sort(e.target.value, sortOrder, s))}
                             >
                                 <option value="title">Title</option>
@@ -80,7 +81,7 @@ const App = () => {
                 <h5>
                     Card View{" "}
                     <button className="btn" onClick={(e) => setShowCard(!showCard)}>
-                        {showCard ? <i class="far fa-eye"></i> : <i class="far fa-eye-slash"></i>}
+                        {showCard ? <i className="far fa-eye"></i> : <i className="far fa-eye-slash"></i>}
                     </button>
                 </h5>
                 {showCard && (
@@ -96,7 +97,7 @@ const App = () => {
                 <h5>
                     Table View{" "}
                     <button className="btn" onClick={(e) => setShowTable(!showTable)}>
-                        {showTable ? <i class="far fa-eye"></i> : <i class="far fa-eye-slash"></i>}
+                        {showTable ? <i className="far fa-eye"></i> : <i className="far fa-eye-slash"></i>}
                     </button>
                 </h5>
                 {showTable && (
