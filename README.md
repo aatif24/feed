@@ -19,6 +19,7 @@ Need two terminals(command interface) to run two different services one is API s
 
 ### Runing API server
 
+- Within `data` directory in root directory you will find `feeds 25-07-20.sql` file, import it to your database.
 - `cd backend/` : to go to the api service folder.
 - `cp .example.env .env` : it will create a copy of .env file and your DB credentials to make it secure
 
