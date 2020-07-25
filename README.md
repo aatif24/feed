@@ -40,6 +40,7 @@ your API service is not up and runing
 
 - `cd client/` : to go to the client folder
 - `npm install` : to install all required packages
+- you will find `constance.js` file into `/client/src` directory and change `API_BASE_URL` as per your runing api service.
 - `npm start` OR `yarn start` : to run client app. With specific port or it will run on 3000 port.
 
 last command will automatically open browser with `http://localhost:3000` (P.s. with specified port).
