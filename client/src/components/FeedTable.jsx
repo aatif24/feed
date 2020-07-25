@@ -17,10 +17,10 @@ const App = ({ data }) => {
                 <div className="card-body">
                     <table className="table">
                         <thead>
-                            <tr className="align-middle text-center">
+                            <tr className="align-middle">
                                 <th>Image</th>
                                 <th
-                                    className="text-left pointer-hand"
+                                    className="pointer-hand"
                                     onClick={(e) =>
                                         dispatch(
                                             sort("title", sortOrder === "asc" ? "desc" : "asc", s)
@@ -62,11 +62,11 @@ const App = ({ data }) => {
                             {data.length
                                 ? data.map((v, i) => (
                                       <tr key={i} className="align-middle">
-                                          <td width="10%">
+                                          <td width="15%">
                                               <LazyLoadImage
                                                   alt={v.title}
                                                   effect="blur"
-                                                  className=" feed-img w-100"
+                                                  className=" feed-img w-75"
                                                   src={v.image}
                                               />
                                           </td>
