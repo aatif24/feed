@@ -9,7 +9,7 @@
 }
 
 .card {
-    border-radius: .5rem !important;
+    border-radius: 0.5rem !important;
 }
 
 @media (max-width: 575.98px) {
@@ -40,6 +40,9 @@
 .search-input-group:focus-within {
     width: 100% !important;
 }
-.bg-dark-blue{
+.bg-dark-blue {
     background-color: red;
+}
+.pointer-hand {
+    cursor: pointer;
 }

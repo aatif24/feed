@@ -4,8 +4,13 @@ import "../css/feed.css";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import { useSelector, useDispatch } from "react-redux";
+import { sort } from "../features/feeds/feedSlice";
 
 const App = ({ data }) => {
+    const dispatch = useDispatch();
+    let { s, order, sortOrder } = useSelector((state) => state.feed);
+
     return (
         <div className="col-12 mb-4 d-flex  feed-card-parent">
             <div className="card shadow border-0">
@@ -14,20 +19,54 @@ const App = ({ data }) => {
                         <thead>
                             <tr className="align-middle text-center">
                                 <th>Image</th>
-                                <th className="text-left">Title</th>
+                                <th
+                                    className="text-left pointer-hand"
+                                    onClick={(e) =>
+                                        dispatch(
+                                            sort("title", sortOrder === "asc" ? "desc" : "asc", s)
+                                        )
+                                    }
+                                >
+                                    Title{" "}
+                                    {order == "title" &&
+                                        (sortOrder === "asc" ? (
+                                            <i className="fas fa-arrow-up"></i>
+                                        ) : (
+                                            <i className="fas fa-arrow-down"></i>
+                                        ))}
+                                </th>
                                 <th className="text-left">Description</th>
-                                <th>Date Updated</th>
+                                <th
+                                    className=" pointer-hand"
+                                    onClick={(e) =>
+                                        dispatch(
+                                            sort(
+                                                "updated_on",
+                                                sortOrder === "asc" ? "desc" : "asc",
+                                                s
+                                            )
+                                        )
+                                    }
+                                >
+                                    Date Updated{" "}
+                                    {order == "updated_on" &&
+                                        (sortOrder === "asc" ? (
+                                            <i className="fas fa-arrow-up"></i>
+                                        ) : (
+                                            <i className="fas fa-arrow-down"></i>
+                                        ))}
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             {data.length
                                 ? data.map((v, i) => (
                                       <tr key={i} className="align-middle">
-                                          <td width="15%">
+                                          <td width="10%">
                                               <LazyLoadImage
                                                   alt={v.title}
                                                   effect="blur"
-                                                  className="shadow feed-img w-100"
+                                                  className=" feed-img w-100"
                                                   src={v.image}
                                               />
                                           </td>
