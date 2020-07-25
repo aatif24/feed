@@ -8,6 +8,10 @@
     border-radius: 1rem;
 }
 
+.card {
+    border-radius: .5rem !important;
+}
+
 @media (max-width: 575.98px) {
     .w-xs-100 {
         width: 100% !important;

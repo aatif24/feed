@@ -17,7 +17,7 @@
 }
 
 .page-link{
-    background-color:#fafbff ;
+    background-color:#fdfdff ;
     padding: 0.5rem 1rem;
 
 }
@@ -28,5 +28,5 @@
 
 }
 .page-item.disabled .page-link{
-    background-color:#fafbff ;
+    background-color:#fdfdff ;
 }

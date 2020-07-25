@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { API_BASE_URL } from "../../constants";
 
 export const feedSlice = createSlice({
     name: "feed",
@@ -46,7 +47,7 @@ export const { list, page, limit, loading, s, order, pageCount, sortOrder } = fe
 export const search = (str, orderBy) => (dispatch) => {
     dispatch(loading(true));
     axios
-        .get("http://localhost:4000", {
+        .get(API_BASE_URL, {
             params: { s: str, order: orderBy },
         })
         .then((response) => {
@@ -67,7 +68,7 @@ export const paginate = (pageNum, s, sortBy) => (dispatch) => {
     dispatch(loading(true));
     let sortOrder = sortBy === "title" ? "asc" : "desc";
     axios
-        .get("http://localhost:4000", {
+        .get(API_BASE_URL, {
             params: { s: s, order: sortBy, sortOder: sortOrder, page: pageNum },
         })
         .then((response) => {
@@ -86,7 +87,7 @@ export const sort = (sortBy, orderDirection = "asc", s) => (dispatch) => {
     dispatch(loading(true));
 
     axios
-        .get("http://localhost:4000", {
+        .get(API_BASE_URL, {
             params: { s: s, order: sortBy, sortOder: orderDirection },
         })
         .then((response) => {
