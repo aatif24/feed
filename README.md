@@ -8,10 +8,10 @@ Tech Stack
 
 
 
-There are two folders in the root directory 
+There are three folders in the root directory 
 1. Backend - Where the API service is in place
 2. Client - The frontend part using ReactJs & Redux(State Management package for ReaactJs)
-
+3. Data - The mysql DB dump `feeds 25-07-20.sql`, import it to your database to get some dummy data and table structure.
 
 ## Runing the services
 
@@ -40,6 +40,7 @@ your API service is not up and runing
 
 - `cd client/` : to go to the client folder
 - `npm install` : to install all required packages
+- you will find `constance.js` file into `/client/src` directory and change `API_BASE_URL` as per your runing api service.
 - `npm start` OR `yarn start` : to run client app. With specific port or it will run on 3000 port.
 
 last command will automatically open browser with `http://localhost:3000` (P.s. with specified port).
