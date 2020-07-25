@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import Loader from "../../components/Loader";
 import Feed from "../../components/FeedCard";
+import FeedTable from "../../components/FeedTable";
 import Pagination from "../../components/Pagination";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -13,7 +14,8 @@ const App = () => {
     const dispatch = useDispatch();
 
     let { feeds, loading, s, order, sortOrder, page } = useSelector((state) => state.feed);
-
+    const [showCard, setShowCard] = useState(true);
+    const [showTable, setShowTable] = useState(true);
     useEffect(() => {
         dispatch(search());
         // eslint-disable-next-line
@@ -47,6 +49,7 @@ const App = () => {
                         </div>
                     </div>
                     <div className="d-none d-lg-block d-md-block col-lg-3 col-md-3"></div>
+
                     <div className="col-lg-3 col-md-3 text-right">
                         <div className="input-group input-group-sm mb-3 ">
                             <select
@@ -74,14 +77,34 @@ const App = () => {
                         </div>
                     </div>
                 </div>
+                <h5>
+                    Card View{" "}
+                    <button className="btn" onClick={(e) => setShowCard(!showCard)}>
+                        {showCard ? <i class="far fa-eye"></i> : <i class="far fa-eye-slash"></i>}
+                    </button>
+                </h5>
+                {showCard && (
+                    <div className="row my-3">
+                        {feeds && feeds.length
+                            ? feeds.map((v, i) => {
+                                  return <Feed data={v} key={i} />;
+                              })
+                            : null}
+                    </div>
+                )}
 
-                <div className="row my-3">
-                    {feeds && feeds.length
-                        ? feeds.map((v, i) => {
-                              return <Feed data={v} key={i} />;
-                          })
-                        : null}
-                </div>
+                <h5>
+                    Table View{" "}
+                    <button className="btn" onClick={(e) => setShowTable(!showTable)}>
+                        {showTable ? <i class="far fa-eye"></i> : <i class="far fa-eye-slash"></i>}
+                    </button>
+                </h5>
+                {showTable && (
+                    <div className="row my-3">
+                        <FeedTable data={feeds} />;
+                    </div>
+                )}
+
                 <div className="row">
                     <Pagination />
                 </div>

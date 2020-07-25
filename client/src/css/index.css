@@ -21,6 +21,8 @@ i.feed {
 }
 i.feed::before {
     content: " FEED";
+
+    font-family: "Play", sans-serif !important;
 }
 .nav-link {
     font-weight: 700;
