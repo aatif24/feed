@@ -8,10 +8,10 @@ Tech Stack
 
 
 
-There are two folders in the root directory 
+There are three folders in the root directory 
 1. Backend - Where the API service is in place
 2. Client - The frontend part using ReactJs & Redux(State Management package for ReaactJs)
-
+3. Data - The mysql DB dump `feeds 25-07-20.sql`, import it to your database to get some dummy data and table structure.
 
 ## Runing the services
 
@@ -19,7 +19,6 @@ Need two terminals(command interface) to run two different services one is API s
 
 ### Runing API server
 
-- Within `data` directory in root directory you will find `feeds 25-07-20.sql` file, import it to your database.
 - `cd backend/` : to go to the api service folder.
 - `cp .example.env .env` : it will create a copy of .env file and your DB credentials to make it secure
 
