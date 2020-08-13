@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import "../css/feed.css";
-
+import Cookies from "js-cookie";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
@@ -11,12 +11,20 @@ const App = ({ data }) => {
             <div className="card shadow border-0">
                 <div className="card-body">
                     <div className="d-flex align-items-center justify-content-center p-1 mb-3">
-                        <LazyLoadImage
-                            alt={data.title}
-                            effect="blur"
-                            className="shadow feed-img w-100"
-                            src={data.image}
-                        />
+                        {Cookies.get("tour") ? (
+                            <LazyLoadImage
+                                alt={data.title}
+                                effect="blur"
+                                className="shadow feed-img w-100"
+                                src={data.image}
+                            />
+                        ) : (
+                            <img
+                                className="shadow feed-img w-100"
+                                src={data.image}
+                                alt={data.title}
+                            />
+                        )}
                     </div>
 
                     <div className="mt-4">

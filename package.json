@@ -1,0 +1,26 @@
+{
+    "name": "kodo",
+    "version": "1.0.0",
+    "description": "Tech Stack",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aatif24/feed.git"
+    },
+    "keywords": [],
+    "author": "Aatif",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/aatif24/feed/issues"
+    },
+    "homepage": "https://github.com/aatif24/feed#readme",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
+    "dependencies": {
+        "axios": "^0.19.2"
+    }
+}
